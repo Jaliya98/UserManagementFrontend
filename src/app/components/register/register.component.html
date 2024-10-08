@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row vh-100 align-items-center">
+      <div class="col-lg-4 offset-lg-4 col-md-8 offset-md-2 col-10 offset-1">
+          <div class="rounded-4 border-0 shadow-lg bg-white" style="min-height: 450px;">
+              <div class="d-flex justify-content-start align-items-center">
+                  <div class="p-5 w-100">
+                    <div class="mb-4 h2 text-success">
+                      Registration
+                    </div>
+                    <form (ngSubmit)="onRegister()">
+                      <div>
+                        <!-- Email Address (cannot be changed later) -->
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" [(ngModel)]="user.email" name="email" required placeholder="Email" />
+                      </div>
+                    
+                      <div>
+                        <!-- Password -->
+                        <label for="password">Password</label>
+                        <input type="password" id="password" [(ngModel)]="user.password" name="password" required placeholder="Password" />
+                      </div>
+                    
+                      <div>
+                        <!-- Date of Birth -->
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input type="date" id="dateOfBirth" [(ngModel)]="user.dob" name="dateOfBirth" required placeholder="Date of Birth" />
+                      </div>
+                    
+                      <div>
+                        <!-- ID Number -->
+                        <label for="idNumber">Identity Card / Document Number</label>
+                        <input type="text" id="idNumber" [(ngModel)]="user.nic" name="idNumber" required placeholder="ID Number" />
+                      </div>
+                    
+                      <div>
+                        <!-- Profile Picture Upload -->
+                        <label for="profilePicture">Profile Picture</label>
+                        <input type="file" id="profilePicture" (change)="onFileSelected($event)" placeholder="Upload Profile Picture" />
+                      </div>
+                    
+                      <div>
+                        <!-- Submit Button -->
+                        <button type="submit">Register</button>
+                      </div>
+                    </form>
+                    
+                  </div> 
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
