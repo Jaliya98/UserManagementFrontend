@@ -1,0 +1,47 @@
+<form *ngIf="user" (ngSubmit)="onUpdateProfile()">
+  <!-- Email Field (non-editable) -->
+  <label for="email">Email (Username):</label>
+  <input
+    type="email"
+    id="email"
+    [(ngModel)]="user.email"
+    [ngModelOptions]="{standalone: true}"
+    name="email"
+    disabled
+    placeholder="Email (Username)"
+  />
+
+  <!-- Date of Birth Field -->
+  <label for="dateOfBirth">Date of Birth:</label>
+  <input
+    type="date"
+    id="dateOfBirth"
+    [(ngModel)]="updatedUser.dob"
+    [ngModelOptions]="{standalone: true}"
+    name="dateOfBirth"
+    required
+  />
+
+  <!-- ID Number Field -->
+  <label for="idNumber">ID Number:</label>
+  <input
+    type="text"
+    id="idNumber"
+    [(ngModel)]="updatedUser.nic"
+    [ngModelOptions]="{standalone: true}"
+    name="idNumber"
+    required
+  />
+
+  <!-- File Input for Profile Picture -->
+  <label for="profilePicture">Profile Picture:</label>
+  <input
+    type="file"
+    id="profilePicture"
+    (change)="onFileSelected($event)"
+    placeholder="Upload New Profile Picture"
+  />
+
+  <!-- Submit Button -->
+  <button type="submit">Update Profile</button>
+</form>
